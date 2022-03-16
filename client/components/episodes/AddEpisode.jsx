@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button"
 
 import Select from "react-select"
 
-import { addBook } from "../actions/index"
+import { addBook } from "../../actions/index"
 
 import { useDispatch } from "react-redux"
 

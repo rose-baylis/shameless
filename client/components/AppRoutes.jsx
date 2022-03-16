@@ -1,7 +1,7 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom"
-import Books from "./Books"
-import Episodes from "./Episodes"
+import Books from "./books/Books"
+import Episodes from "./episodes/Episodes"
 
 function AppRoutes(props) {
   return (

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-import { fetchBooks } from '../actions'
+import { fetchBooks } from '../../actions'
 import { useDispatch } from 'react-redux'
 
 import Book from './Book'
 import AddBook from './AddBook'
-import Header from './Header'
+import Header from '../common/Header'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
