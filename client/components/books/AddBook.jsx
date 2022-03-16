@@ -16,14 +16,15 @@ function AddBook(props) {
   const [selectEpisodes, setSelectEpisodes] = useState([])
 
   useEffect(() => {
-   getEpisodes()
+    getEpisodes()
   }),
     []
 
   const getEpisodes = () => {
     dispatch(fetchEpisodes()).then((episodes) => {
       setSelectEpisodes(episodes)
-    })  }
+    })
+  }
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -46,12 +47,45 @@ function AddBook(props) {
     // setValidated(true)
 
     dispatch(addBook(formData))
-   
-    
   }
 
   return (
     <>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label for="title">Title </label>
+          <input
+            type="text"
+            name="title"
+            id="name"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="author">Author</label>
+          <input
+            type="text"
+            name="author"
+            id="name"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="recommended_by">Recommended by</label>
+
+          <select name="recommended_by" id="recommended_by"  onChange={handleChange}>
+            <option value="">--Select--</option>
+            <option value="Mich">Mich</option>
+            <option value="Zara">Zara</option>
+            <option value="Zara">Both</option>
+          </select>
+        </div>
+        <button type="submit">Submit</button>
+
+      </form>
+{/* 
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="bookTitle">
           <Form.Label>Title</Form.Label>
@@ -93,29 +127,10 @@ function AddBook(props) {
           </Form.Select>
         </Form.Group>
 
-        {/* <Form.Group
-          className="mb-3"
-          controlId="formEpisode"
-          name="episode"
-          onChange={handleChange}
-        >
-          <Form.Label>Episode</Form.Label>
-          <Form.Select aria-label="Default select example" name="episode">
-            <option>Select an episode </option>
-            {selectEpisodes.map((episode) => {
-              return (
-                <option key={episode.id} value={episode.id}>
-                  {episode.name}
-                </option>
-              )
-            })}
-          </Form.Select>
-        </Form.Group> */}
-
         <Button variant="primary" type="submit">
           Submit
         </Button>
-      </Form>
+      </Form> */}
     </>
   )
 }
