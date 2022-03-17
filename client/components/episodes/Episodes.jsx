@@ -6,7 +6,7 @@ function Episodes(props) {
  
   return (
   <>
-  <Header title="Episodes "/>
+  <Header title="Episodes"/>
   <AddEpisode />
   </>
    

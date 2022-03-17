@@ -4,6 +4,8 @@ import { addBook, fetchEpisodes } from "../../actions/index"
 
 import { useDispatch } from "react-redux"
 
+import TextInput from "../common/form/TextInput"
+import SelectSingle from "../common/SelectSingle"
 function AddBook(props) {
   const dispatch = useDispatch()
 
@@ -34,63 +36,65 @@ function AddBook(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(addBook(formData))
+    //todo clear form data
   }
 
   return (
     <>
-          <section className="container mx-auto">
+      <section className="container mx-auto mb-5">
+        <form onSubmit={handleSubmit}>
+          <div className="grid grid-cols-1 gap-6">
+            {/* Title */}
+            <TextInput
+              formElement={{
+                label: "Title",
+                name: "title",
+                htmlFor: "title",
+                onChange: handleChange,
+                isRequired: true,
+              }}
+            />
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title </label>
-          <input
-            type="text"
-            name="title"
-            id="name"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="author">Author</label>
-          <input
-            type="text"
-            name="author"
-            id="name"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
-        State
-      </label>
-      <div className="relative">
-        <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-          <option>Mich</option>
-          <option>Zara</option>
-          <option>Both</option>
-        </select>
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-        </div>
-      </div>
-    </div>
-        <div>
-          <label htmlFor="recommended_by">Recommended by</label>
+            {/* Author */}
+            <TextInput
+              formElement={{
+                label: "Author",
+                name: "author",
+                htmlFor: "author",
+                onChange: handleChange,
+                isRequired: true,
+              }}
+            />
 
-          <select name="recommended_by" id="recommended_by"  onChange={handleChange}>
-            <option value="">--Select--</option>
-            <option value="Mich">Mich</option>
-            <option value="Zara">Zara</option>
-            <option value="Zara">Both</option>
-          </select>
-        </div>
-        <button type="submit">Submit</button>
+            {/* Recommended by */}
+            <SelectSingle
+              formElement={{
+                label: "Recommended by",
+                name: "recommended_by",
+                htmlFor: "recommended_by",
+                defaultValue: "default",
+                options: [
+                  { value: "default", label: "Select host" },
+                  { value: "mich", label: "Mich" },
+                  { value: "zara", label: "Zara" },
+                  { value: "Both", label: "Both" },
+                ],
+                onChange: handleChange,
+                isRequired: true,
+              }}
+            />
 
-      </form>
+            <div className="w-full md:w-1/3 px-3 mb-6 md:mb-2">
+              <button
+                className="bg-fuchsia-700 text-white uppercase tracking-wide  text-xs font-bold p-3 rounded"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
       </section>
-
     </>
   )
 }
