@@ -1,28 +1,27 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require("path")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
-  entry: [
-    "./client/index.js",
-    "./client/styles/index.scss"
-  ],
+  entry: ["./client/index.js"
+  // , "./client/styles/index.scss"
+],
   output: {
     path: path.join(__dirname, "..", "server", "public"),
     filename: "bundle.js",
-    publicPath: '',
+    publicPath: "",
   },
   mode: "development",
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.css",
-      chunkFilename: "[id].css",
-      ignoreOrder: false, // Enable to remove warnings about conflicting order
+      // filename: "styles.css",
+      // chunkFilename: "[id].css",
+      // ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test:  /\.(js|jsx)$/,
         loader: "babel-loader",
         exclude: /node_modules/,
       },
@@ -33,7 +32,9 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
           },
           "css-loader",
-          "sass-loader",
+          // "sass-loader",
+          "postcss-loader",
+
         ],
       },
     ],
@@ -42,7 +43,4 @@ module.exports = {
     extensions: [".js", ".jsx"],
   },
   devtool: "source-map",
-};
-
-
-
+}

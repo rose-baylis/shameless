@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import { fet } from '../actions'
+import { fet } from '../../actions'
 
 function LoadSubreddit({ children }) {
   const dispatch = useDispatch()
