@@ -5,7 +5,7 @@ function Navigation(props) {
   return (
     <nav className="container mx-auto p-4">
        <Link className="pr-2" to="/books">Books</Link>
-       <Link className="pr-2 ">Episodes</Link>
+       <Link className="pr-2 " to="/episodes">Episodes</Link>
     </nav>
   )
 }

@@ -23,7 +23,7 @@ function Books(props) {
     <Header title='Books'></Header>
       <AddBook />
       <section className="container mx-auto">
-      <div class="grid gap-4 sm:grid-cols-3 grid-rows-3">
+      <div className="grid gap-4 sm:grid-cols-3 grid-rows-3">
 
 
         {books.map((book, i) => (
