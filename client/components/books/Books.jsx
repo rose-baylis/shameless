@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux"
 
 import Book from "./Book"
 import AddBook from "./AddBook"
+import Header from "../common/Header"
 
 function Books(props) {
   const books = useSelector((state) => state.books)
@@ -19,12 +20,16 @@ function Books(props) {
 
   return (
     <>
-      <h1>Books</h1>
+    <Header title='Books'></Header>
       <AddBook />
-      <section>
+      <section className="container mx-auto">
+      <div class="grid gap-4 sm:grid-cols-3 grid-rows-3">
+
+
         {books.map((book, i) => (
           <Book key={i} book={book} />
         ))}
+        </div>
       </section>
     </>
   )
