@@ -4,8 +4,11 @@ function Header(props) {
   const { title } = props
 
   return (
-    <header className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold">{title}</h1>
+    <header className="bg-shamelessOrange-500 ">
+      <div className="container p-6 mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-2">{title}</h1>
+        <p className="text-shamelessOrange-200">Find all the recommendations from the Shameless team</p>
+        </div>
       </header>
   )
 }

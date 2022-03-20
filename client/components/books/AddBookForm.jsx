@@ -41,7 +41,8 @@ function AddBook(props) {
 
   return (
     <>
-      <section className="container mx-auto mb-5">
+      <section className="container mx-auto mb-5 p-4">
+        <h3 className="text-2xl font-bold mb-2">Add book </h3>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6">
             {/* Title */}

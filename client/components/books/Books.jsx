@@ -5,7 +5,7 @@ import { fetchBooks } from "../../actions"
 import { useDispatch } from "react-redux"
 
 import Book from "./Book"
-import AddBook from "./AddBook"
+import AddBook from "./AddBookForm"
 import Header from "../common/Header"
 
 function Books(props) {
@@ -21,11 +21,8 @@ function Books(props) {
   return (
     <>
     <Header title='Books'></Header>
-      <AddBook />
-      <section className="container mx-auto">
-      <div className="grid gap-4 sm:grid-cols-3 grid-rows-3">
-
-
+    <section className="container mx-auto bg-lightYellow mt-6">
+      <div className="grid gap-4 sm:grid-cols-2 grid-rows-3">
         {books.map((book, i) => (
           <Book key={i} book={book} />
         ))}
