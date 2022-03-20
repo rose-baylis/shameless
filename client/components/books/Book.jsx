@@ -12,7 +12,7 @@ function Book(props) {
   <div class="row-span-2 col-span-2 ...">03</div>
 </div> */}
 
-      <div className="drop-shadow-md bg-white grid grid-cols-3 grid-rows-1 max-h-64">
+      <div className="drop-shadow-md bg-white grid grid-cols-3 grid-rows-1 max-h-56">
         <div className="col-span-1 row-span-1 ... ">
           <img src="img/placeholder-2.jpg" className="object-cover h-full w-full" />
         </div>

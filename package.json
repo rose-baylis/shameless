@@ -82,6 +82,7 @@
         "express": "^4.17.1",
         "knex": "^1.0.3",
         "pg": "^8.5.1",
+        "react-scroll": "^1.8.6",
         "react-select": "^5.2.2",
         "snakecase-keys": "^5.1.2",
         "sqlite3": "^5.0.2",

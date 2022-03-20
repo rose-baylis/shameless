@@ -4,7 +4,7 @@ function Tag(props) {
   const { text, link } = props
 
   return (
-    <div class="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-200 text-blue-700 rounded-md mb-2">
+    <div className="text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 bg-blue-200 text-blue-700 rounded-md mb-2">
             {/* <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
