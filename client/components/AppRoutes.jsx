@@ -1,5 +1,6 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom"
+import Home from "./Home"
 import Books from "./books/Books"
 import AddBook from "./AddRecommendation"
 import Episodes from "./episodes/Episodes"
@@ -11,7 +12,7 @@ function AppRoutes(props) {
         <Route
           exact
           path="/"
-          render={(routerProps) => <Books {...routerProps} />}
+          render={(routerProps) => <Home {...routerProps} />}
         />
         <Route
           exact
@@ -21,7 +22,7 @@ function AppRoutes(props) {
         />
           <Route
           exact
-          path="/new-recomendation"
+          path="/new-recommendation"
           render={(routerProps) => <AddBook    />}
         />
         <Route

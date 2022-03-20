@@ -16,8 +16,8 @@ function Book(props) {
         <div className="col-span-1 row-span-1 ... ">
           <img src="img/placeholder-2.jpg" className="object-cover h-full w-full" />
         </div>
-        <div className="row-span-3 col-span-1 ... p-5">
-          <Tag text="Bookie" link="/books" />
+        <div className="col-span-2 row-span-1  ... p-5">
+          <Tag text="Book" link="/books" />
           <div className="mb-2">
             <p className="text-lg font-bold">{book.title}</p>
           </div>
