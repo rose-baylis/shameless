@@ -1,4 +1,5 @@
 import React from "react"
+import Tag from "../common/Tag"
 
 function Book(props) {
   const { book } = props
@@ -11,12 +12,12 @@ function Book(props) {
   <div class="row-span-2 col-span-2 ...">03</div>
 </div> */}
 
-      <div className="drop-shadow-md bg-white grid grid-cols-3 grid-rows-3 gap-4 ">
-        <div className="col-span-1 row-span-3 ... ">
-          <img src="img/placeholder-2.jpg" className="object-cover h-48 w-96" />
+      <div className="drop-shadow-md bg-white grid grid-cols-3 grid-rows-1 max-h-64">
+        <div className="col-span-1 row-span-1 ... ">
+          <img src="img/placeholder-2.jpg" className="object-cover h-full w-full" />
         </div>
-        {/* <div className=""> */}
-        <div className="row-span-3 col-span-2 ... p-3">
+        <div className="row-span-3 col-span-1 ... p-5">
+          <Tag text="Bookie" link="/books" />
           <div className="mb-2">
             <p className="text-lg font-bold">{book.title}</p>
           </div>
@@ -24,7 +25,9 @@ function Book(props) {
             <p className="text-sm text-gray-400	">Recommended by</p>
             <p>{book.recommended_by}</p>
           </div>
-          <div className="mb-2">
+          
+        
+          <div className="">
             <p className="text-sm text-gray-400	">Author</p>
             <p>{book.author}</p>
           </div>
