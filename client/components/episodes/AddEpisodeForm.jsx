@@ -6,8 +6,7 @@ import { useDispatch } from "react-redux"
 
 import TextInput from "../common/form/TextInput"
 import SelectSingle from "../common/form/SelectSingle"
-
-function AddBookForm(props) {
+function AddEpisodeForm(props) {
   const dispatch = useDispatch()
 
   const [formData, setFormData] = useState({})
@@ -17,7 +16,6 @@ function AddBookForm(props) {
   useEffect(() => {
     getEpisodes()
   }, [])
-   
 
   const getEpisodes = () => {
     dispatch(fetchEpisodes()).then((episodes) => {
@@ -43,13 +41,13 @@ function AddBookForm(props) {
   return (
     <>
       <section className="container mx-auto mb-5 p-4">
-        <h3 className="text-2xl font-bold mb-2">Add book </h3>
+        <h3 className="text-2xl font-bold mb-2">Add Episode </h3>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6">
             {/* Title */}
             <TextInput
               formElement={{
-                label: "Title",
+                label: "Test",
                 name: "title",
                 htmlFor: "title",
                 onChange: handleChange,
@@ -101,4 +99,4 @@ function AddBookForm(props) {
   )
 }
 
-export default AddBookForm
+export default AddEpisodeForm
