@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux"
 
 import TextInput from "../common/form/TextInput"
 import SelectSingle from "../common/form/SelectSingle"
+import PrimaryButton from "../common/PrimaryButton"
 
 function AddBookForm(props) {
   const dispatch = useDispatch()
@@ -43,7 +44,7 @@ function AddBookForm(props) {
   return (
     <>
       <section className="container mx-auto mb-5 p-4">
-        <h3 className="text-2xl font-bold mb-2">Add Book</h3>
+        <h3 className="text-2xl font-bold mb-4">Add Book</h3>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6">
             {/* Title */}
@@ -87,12 +88,7 @@ function AddBookForm(props) {
             />
 
             <div className="w-full mb-6 md:mb-2">
-              <button
-                className="bg-fuchsia-700 text-white uppercase tracking-wide  text-xs font-bold p-3 rounded"
-                type="submit"
-              >
-                Submit
-              </button>
+             <PrimaryButton text="Submit" type="submit" />
             </div>
           </div>
         </form>

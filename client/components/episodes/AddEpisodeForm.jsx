@@ -6,6 +6,9 @@ import { useDispatch } from "react-redux"
 
 import TextInput from "../common/form/TextInput"
 import SelectSingle from "../common/form/SelectSingle"
+
+import PrimaryButton from "../common/PrimaryButton"
+
 function AddEpisodeForm(props) {
   const dispatch = useDispatch()
 
@@ -41,56 +44,22 @@ function AddEpisodeForm(props) {
   return (
     <>
       <section className="container mx-auto mb-5 p-4">
-        <h3 className="text-2xl font-bold mb-2">Add Episode </h3>
+        <h3 className="text-2xl font-bold mb-4">Add Episode </h3>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6">
-            {/* Title */}
             <TextInput
               formElement={{
-                label: "Test",
-                name: "title",
-                htmlFor: "title",
+                label: "Episode Name",
+                name: "episodeName",
+                htmlFor: "episodeName",
                 onChange: handleChange,
                 isRequired: true,
               }}
             />
 
-            {/* Author */}
-            <TextInput
-              formElement={{
-                label: "Author",
-                name: "author",
-                htmlFor: "author",
-                onChange: handleChange,
-                isRequired: true,
-              }}
-            />
+            <div className="w-full mb-6 md:mb-2">
+              <PrimaryButton text="Submit" type="submit" />
 
-            {/* Recommended by */}
-            <SelectSingle
-              formElement={{
-                label: "Recommended by",
-                name: "recommended_by",
-                htmlFor: "recommended_by",
-                defaultValue: "default",
-                options: [
-                  { value: "default", label: "Select host" },
-                  { value: "mich", label: "Mich" },
-                  { value: "zara", label: "Zara" },
-                  { value: "Both", label: "Both" },
-                ],
-                onChange: handleChange,
-                isRequired: true,
-              }}
-            />
-
-            <div className="w-full md:w-1/3 px-3 mb-6 md:mb-2">
-              <button
-                className="bg-fuchsia-700 text-white uppercase tracking-wide  text-xs font-bold p-3 rounded"
-                type="submit"
-              >
-                Submit
-              </button>
             </div>
           </div>
         </form>
