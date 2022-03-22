@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 
-import { fetchBooks } from "../../actions"
+import { fetchBooks, setCurrentPage } from "../../actions"
 import { useDispatch } from "react-redux"
 
 import Book from "./Book"
@@ -17,6 +17,8 @@ function Books(props) {
     
   document.title = `Books`
     dispatch(fetchBooks())
+    dispatch(setCurrentPage('/books'))
+
   }, [])
 
   return (

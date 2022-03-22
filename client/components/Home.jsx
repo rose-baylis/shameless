@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 
-import { fetchBooks } from "../actions"
+import { fetchBooks, setCurrentPage } from "../actions"
 import { useDispatch } from "react-redux"
 
 import Book from "./books/Book"
 import Header from "./common/Header"
 
-// import * as Scroll from "react-scroll"
 import {
   Link,
   Button,
@@ -18,7 +17,8 @@ import {
   scroller,
 } from "react-scroll"
 
-function Home(props) {
+function Home() {
+
   const books = useSelector((state) => state.books)
 
   const dispatch = useDispatch()
@@ -26,11 +26,10 @@ function Home(props) {
   useEffect(() => {
     document.title = `Home`
     dispatch(fetchBooks())
+    dispatch(setCurrentPage('/'))
+    
   }, [])
 
-  const handleActive = (athing) => {
-    console.log("active")
-  }
 
   return (
     <>
