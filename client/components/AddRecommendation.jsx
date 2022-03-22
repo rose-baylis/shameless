@@ -18,7 +18,8 @@ function AddRecommendation() {
 
   
     useEffect(() => {
-      dispatch(setCurrentPage('addNew'))
+      // Sets the page to highlight in the navigation
+      dispatch(setCurrentPage('/new-recommendation'))
     }, [])
   
   
