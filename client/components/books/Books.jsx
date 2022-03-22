@@ -14,7 +14,8 @@ function Books(props) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    document.title = `Books`
+    
+  document.title = `Books`
     dispatch(fetchBooks())
   }, [])
 

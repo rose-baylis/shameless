@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react"
 import Header from "./common/Header"
 import AddBookForm from "./books/AddBookForm"
 import AddEpisodeForm from "./episodes/AddEpisodeForm"
+import { setCurrentPage } from "./../actions/index"
+import { useDispatch } from "react-redux"
 
 function AddRecommendation() {
+  const dispatch = useDispatch()
 
   const [selected, setSelected] = useState('book')
   // const selected = "book"
@@ -14,9 +17,9 @@ function AddRecommendation() {
     "inline-block py-4 px-4 text-sm font-medium text-center text-gray-400 rounded-t-lg border-b-2 border-transparent hover:text-gray-400 hover:border-gray-300  transition   transition-all duration-500  "
 
   
-    // useEffect(() => {
-    //   setTabComponent(<AddBookForm />)
-    // }, [])
+    useEffect(() => {
+      dispatch(setCurrentPage('addNew'))
+    }, [])
   
   
   const handleTab = (e) => {

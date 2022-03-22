@@ -4,6 +4,15 @@ export const RECEIVE_BOOKS = "RECEIVE_BOOKS"
 export const REQUEST_BOOKS = "REQUEST_BOOKS"
 export const REQUEST_EPISODES = "REQUEST_EPISODES"
 export const ADD_BOOK = "ADD_BOOK"
+export const SET_CURRENT_PAGE = "CURRENT_PAGE"
+
+export function setCurrentPage(page){
+  return {
+    type: SET_CURRENT_PAGE,
+    page: page
+  }
+}
+
 
 export function receiveBooks(books) {
   return {
