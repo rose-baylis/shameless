@@ -43,7 +43,7 @@ function AddBookForm(props) {
   return (
     <>
       <section className="container mx-auto mb-5 p-4">
-        <h3 className="text-2xl font-bold mb-2">Add book </h3>
+        <h3 className="text-2xl font-bold mb-2">Add Book</h3>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 gap-6">
             {/* Title */}
@@ -86,7 +86,7 @@ function AddBookForm(props) {
               }}
             />
 
-            <div className="w-full md:w-1/3 px-3 mb-6 md:mb-2">
+            <div className="w-full mb-6 md:mb-2">
               <button
                 className="bg-fuchsia-700 text-white uppercase tracking-wide  text-xs font-bold p-3 rounded"
                 type="submit"
