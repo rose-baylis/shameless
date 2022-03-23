@@ -1,5 +1,4 @@
 import React from "react"
-import PrimaryButton from "../PrimaryButton"
 
 function TwoColForm(props) {
   const { heading, subheading } = props

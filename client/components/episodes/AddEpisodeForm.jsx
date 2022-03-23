@@ -8,6 +8,7 @@ import TextInput from "../common/form/TextInput"
 import TwoColFormLayout from "../common/form/TwoColFormLayout"
 import FormFooter from "../common/form/FormFooter"
 import FormContainer from "../common/form/FormContainer"
+import EpisodeList from "./EpisodeList"
 
 function AddEpisodeForm(props) {
   const dispatch = useDispatch()
@@ -42,13 +43,13 @@ function AddEpisodeForm(props) {
   }
 
   return (
+    <div>
     <TwoColFormLayout
-      heading="Add an epside"
-      subheading="It's helpful listeners to know what episodes the recommendation was made on."
+      heading="Add an episode"
+      subheading="It's helpful listeners to know what episode(s) the recommendation was made on."
     >
       <form onSubmit={handleSubmit}>
-      <FormContainer>
-
+        <FormContainer>
           <TextInput
             formElement={{
               label: "Episode Name",
@@ -74,6 +75,9 @@ function AddEpisodeForm(props) {
         <FormFooter />
       </form>
     </TwoColFormLayout>
+     <EpisodeList/>
+
+     </div>
   )
 }
 

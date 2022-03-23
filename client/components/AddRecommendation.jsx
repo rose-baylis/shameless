@@ -4,19 +4,36 @@ import AddBookForm from "./books/AddBookForm"
 import AddEpisodeForm from "./episodes/AddEpisodeForm"
 import { setCurrentPage } from "./../actions/index"
 import { useDispatch } from "react-redux"
+import EpisodeList from "./episodes/EpisodeList"
 
 function AddRecommendation() {
   const dispatch = useDispatch()
   const [selected, setSelected] = useState("book")
-  const activeClass =
-    "inline-block py-4 px-4 text-sm font-medium text-center text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500 transition transition-all duration-500	"
+const [tabComponent, setTabComponent] = useState(<AddBookForm /> )
+const activeClass =
+    "inline-block py-4 px-4 text-sm font-medium text-center text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500 transition transition-all duration-400	"
   const basicClass =
-    "inline-block py-4 px-4 text-sm font-medium text-center text-gray-400 rounded-t-lg border-b-2 border-transparent hover:text-gray-400 hover:border-gray-300  transition   transition-all duration-500  "
+    "inline-block py-4 px-4 text-sm font-medium text-center text-gray-400 rounded-t-lg border-b-2 border-transparent hover:text-gray-400 hover:border-gray-300  transition   transition-all duration-400  "
 
   useEffect(() => {
     // Sets the page to highlight in the navigation
     dispatch(setCurrentPage("/new-recommendation"))
   }, [])
+
+    useEffect(() => {
+      switch(selected){
+        case 'book':
+          console.log(selected, " selected ")
+          setTabComponent(<AddBookForm /> )
+          break
+        case 'episode':
+          console.log(selected, " selected ")
+          setTabComponent(<AddEpisodeForm />)
+          break
+        default:
+          console.log("No tab selected")
+      }
+  }, [selected])
 
   const handleTab = (e) => {
     setSelected(e.target.name)
@@ -31,8 +48,9 @@ function AddRecommendation() {
             Find all the recommendations from the Shameless team
           </p>
         </div>
+      
 
-        <div className="border-b border-gray-200 dark:border-gray-300">
+        <div className="border-b border-gray-200 ">
           <ul className="flex flex-wrap">
             <li className="mr-2">
               <a
@@ -59,7 +77,7 @@ function AddRecommendation() {
         </div>
       </div>
       <div className="container mx-auto">
-          {selected === "book" ? <AddBookForm /> : <AddEpisodeForm />}
+          {tabComponent}
       </div>
       </div>
   )

@@ -14,21 +14,19 @@ function Books(props) {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    
-  document.title = `Books`
+    document.title = `Books`
     dispatch(fetchBooks())
-    dispatch(setCurrentPage('/books'))
-
+    dispatch(setCurrentPage("/books"))
   }, [])
 
   return (
     <>
-    <Header title='Books'></Header>
-    <section className="container mx-auto p-3 bg-lightYellow">
-      <div className="grid gap-4 sm:grid-cols-2 grid-rows-3">
-        {books.map((book, i) => (
-          <Book key={i} book={book} />
-        ))}
+      <Header title="Books"></Header>
+      <section className="container mx-auto p-3 bg-lightYellow">
+        <div className="grid gap-4 sm:grid-cols-2 grid-rows-3">
+          {books.map((book, i) => (
+            <Book key={i} book={book} />
+          ))}
         </div>
       </section>
     </>

@@ -3,6 +3,7 @@ import request from "superagent"
 export const RECEIVE_BOOKS = "RECEIVE_BOOKS"
 export const REQUEST_BOOKS = "REQUEST_BOOKS"
 export const REQUEST_EPISODES = "REQUEST_EPISODES"
+export const RECEIVE_EPISODES = "RECEIVE_EPISODES"
 export const ADD_BOOK = "ADD_BOOK"
 export const SET_CURRENT_PAGE = "CURRENT_PAGE"
 
@@ -43,7 +44,7 @@ export function fetchBooks() {
         return null
       })
       .catch((err) => {
-        // dispatch(showError(err.message));
+        console.error(error)
       })
   }
 }
@@ -56,7 +57,7 @@ export function fetchEpisodes() {
         return episodes.body
       })
       .catch((err) => {
-        // dispatch(showError(err.message));
+        console.error(error)
       })
   }
 }
@@ -75,7 +76,7 @@ export function addBook(newBook) {
         return null
       })
       .catch((err) => {
-        // dispatch(showError(err.message));
+        console.error(error)
       })
   }
 }
