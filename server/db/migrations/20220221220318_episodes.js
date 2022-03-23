@@ -1,8 +1,10 @@
 exports.up = (knex) => {
     return knex.schema.createTable('episodes', (table) => {
       table.increments('id')
-      table.string('name')
+      table.string('episode_name')
       table.date('episode_date')
+      table.timestamp('created_at').defaultTo(knex.fn.now())
+      
     })
   }
   

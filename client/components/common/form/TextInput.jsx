@@ -18,6 +18,7 @@ function TextInput(props) {
           id={formElement.name}
           onChange={formElement.onChange}
           required={formElement.isRequired}
+          value={formElement.value}
           className="focus:ring-indigo-500 focus:border-indigo-500 block w-full  pr-12 sm:text-sm border-gray-300 rounded-md"
         />
       </div>

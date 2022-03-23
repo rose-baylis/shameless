@@ -3,15 +3,8 @@ import { useDispatch } from "react-redux"
 import { fetchEpisodes } from "../../actions"
 
 function EpisodeList(props) {
-  const [episodes, setEpisodes] = useState()
+  const {episodes} = props
 
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(fetchEpisodes()).then((episodes) => {
-      setEpisodes(episodes)
-    })
-  }, [])
 
   return (
     <>
@@ -44,7 +37,7 @@ function EpisodeList(props) {
                     >
                       {episode.episode_date}
                     </th>
-                    <td className="px-6 py-4">{episode.name}</td>
+                    <td className="px-6 py-4">{episode.episode_name}</td>
                   </tr>
                 )
               })}
