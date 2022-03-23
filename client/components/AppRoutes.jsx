@@ -2,7 +2,7 @@ import React from "react"
 import { Switch, Route } from "react-router-dom"
 import Home from "./Home"
 import Books from "./books/Books"
-import AddBook from "./AddRecommendation"
+import AddRecommendation from "./AddRecommendation"
 
 function AppRoutes(props) {
 
@@ -22,10 +22,20 @@ function AppRoutes(props) {
         //   pageTitle="Books"
           render={(routerProps) => <Books    />}
         />
-          <Route
+            <Route
           exact
           path="/new-recommendation"
-          render={(routerProps) => <AddBook    />}
+          render={(routerProps) => <AddRecommendation urlSelected="book" />}
+        />
+          <Route
+          exact
+          path="/new-recommendation/book"
+          render={(routerProps) => <AddRecommendation urlSelected="book" />}
+        />
+            <Route
+          exact
+          path="/new-recommendation/episode"
+          render={(routerProps) => <AddRecommendation urlSelected="episode" />}
         />
      
       </Switch>

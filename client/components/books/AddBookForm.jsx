@@ -15,18 +15,6 @@ function AddBookForm(props) {
 
   const [formData, setFormData] = useState({})
 
-  const [selectEpisodes, setSelectEpisodes] = useState([])
-
-  useEffect(() => {
-    getEpisodes()
-  }, [])
-
-  const getEpisodes = () => {
-    dispatch(fetchEpisodes()).then((episodes) => {
-      setSelectEpisodes(episodes)
-    })
-  }
-
   const handleChange = (e) => {
     e.preventDefault()
 

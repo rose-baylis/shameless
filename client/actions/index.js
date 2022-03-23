@@ -62,9 +62,8 @@ export function fetchEpisodes() {
   }
 }
 
-//Type not needed as we aren't talking to the reducer we are going staight to the db
+
 export function addBook(newBook) {
-  console.log("addBook action triggered", newBook)
   return (dispatch) => {
     return request
       .post(`/api/v1/books`)

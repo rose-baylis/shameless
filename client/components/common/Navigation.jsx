@@ -17,7 +17,7 @@ function Navigation(props) {
   return (
     <nav className="bg-shamelessLilac-500">
       <div className="container flex items-center mx-auto p-2 gap-5 bg-shamelessLilac-500">
-        <img src="img/shameless-logo.svg" />
+        <img src="/img/shameless-logo.svg" />
         {navItems.map((navItem) => {
           return (
             <Link

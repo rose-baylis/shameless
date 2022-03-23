@@ -3,6 +3,7 @@ import React, { Component, useState, useEffect } from "react"
 import { addBook, fetchEpisodes } from "../../actions/index"
 
 import { useDispatch } from "react-redux"
+import { addEpisode } from '../../apis'
 
 import TextInput from "../common/form/TextInput"
 import TwoColFormLayout from "../common/form/TwoColFormLayout"
@@ -13,19 +14,7 @@ import EpisodeList from "./EpisodeList"
 function AddEpisodeForm(props) {
   const dispatch = useDispatch()
 
-  const [formData, setFormData] = useState({})
-
-  const [selectEpisodes, setSelectEpisodes] = useState([])
-
-  useEffect(() => {
-    getEpisodes()
-  }, [])
-
-  const getEpisodes = () => {
-    dispatch(fetchEpisodes()).then((episodes) => {
-      setSelectEpisodes(episodes)
-    })
-  }
+  const [formData, setFormData] = useState({}) 
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -38,7 +27,11 @@ function AddEpisodeForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(addBook(formData))
+    addEpisode(formData)
+    .then((result)=>{
+      console.log(result)
+    })
+    
     //todo clear form data
   }
 

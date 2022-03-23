@@ -4,15 +4,19 @@ const router = express.Router();
 
 
 
-// Get a list of blog posts
 // http://localhost:3000/api/v1/episodes
 router.get("/", (req, res) => {
   db.getAllEpisodes().then((episodes) => {
-    // utils.readyForJS(books);
-    // console.log("hit the db", books)
     res.json(episodes)
   })
 })
 
+// // http://localhost:3000/api/v1/episodes
+// router.post("/", (req, res) => {
+//   console.log(req.body)
+//   db.addEpisode().then((episodes) => {
+//     res.json(episodes)
+//   })
+// })
 
 module.exports = router;
