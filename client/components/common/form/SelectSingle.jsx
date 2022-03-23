@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 
 function SelectSingle(props) {
   const { formElement } = props
 
   return (
-    <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+    <div className="w-full mb-6 md:mb-0">
       <label
         htmlFor={formElement.htmlFor}
         className="block text-sm font-medium text-gray-700"
