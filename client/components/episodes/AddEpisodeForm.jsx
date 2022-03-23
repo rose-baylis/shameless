@@ -5,9 +5,9 @@ import { addBook, fetchEpisodes } from "../../actions/index"
 import { useDispatch } from "react-redux"
 
 import TextInput from "../common/form/TextInput"
-import SelectSingle from "../common/form/SelectSingle"
-
-import PrimaryButton from "../common/PrimaryButton"
+import TwoColFormLayout from "../common/form/TwoColFormLayout"
+import FormFooter from "../common/form/FormFooter"
+import FormContainer from "../common/form/FormContainer"
 
 function AddEpisodeForm(props) {
   const dispatch = useDispatch()
@@ -42,29 +42,38 @@ function AddEpisodeForm(props) {
   }
 
   return (
-    <>
-      <section className="container mx-auto mb-5 p-4">
-        <h3 className="text-2xl font-bold mb-4">Add Episode </h3>
-        <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 gap-6">
-            <TextInput
-              formElement={{
-                label: "Episode Name",
-                name: "episodeName",
-                htmlFor: "episodeName",
-                onChange: handleChange,
-                isRequired: true,
-              }}
-            />
+    <TwoColFormLayout
+      heading="Add an epside"
+      subheading="It's helpful listeners to know what episodes the recommendation was made on."
+    >
+      <form onSubmit={handleSubmit}>
+      <FormContainer>
 
-            <div className="w-full mb-6 md:mb-2">
-              <PrimaryButton text="Submit" type="submit" />
+          <TextInput
+            formElement={{
+              label: "Episode Name",
+              name: "episodeName",
+              htmlFor: "episodeName",
+              onChange: handleChange,
+              isRequired: true,
+            }}
+          />
 
+          <div className="w-full mb-6 md:mb-0">
+            <label className="block text-sm font-medium text-gray-700">
+              Date
+            </label>
+            <div className="mt-1 relative rounded-md shadow-sm">
+              <input
+                type="date"
+                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full   sm:text-sm border-gray-300 rounded-md"
+              />
             </div>
           </div>
-        </form>
-      </section>
-    </>
+        </FormContainer>
+        <FormFooter />
+      </form>
+    </TwoColFormLayout>
   )
 }
 

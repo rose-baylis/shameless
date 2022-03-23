@@ -23,10 +23,17 @@ function AddRecommendation() {
   }
 
   return (
-    <>
-      <div className="container mx-auto p-3">
+    <div className="bg-gray-50 min-h-screen" >
+      <div className="container mx-auto p-3 ">
+        <div className="py-5">
+          <h3 className="text-2xl font-bold mb-1">Add new recommendation </h3>
+          <p className="text-gray-400">
+            Find all the recommendations from the Shameless team
+          </p>
+        </div>
+
         <div className="border-b border-gray-200 dark:border-gray-300">
-          <ul className="flex flex-wrap -mb-px">
+          <ul className="flex flex-wrap">
             <li className="mr-2">
               <a
                 name="book"
@@ -52,11 +59,9 @@ function AddRecommendation() {
         </div>
       </div>
       <div className="container mx-auto">
-        <div className="md:w-1/3">
           {selected === "book" ? <AddBookForm /> : <AddEpisodeForm />}
-        </div>
       </div>
-    </>
+      </div>
   )
 }
 
