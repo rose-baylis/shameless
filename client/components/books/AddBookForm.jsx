@@ -1,9 +1,5 @@
 import React, { Component, useState, useEffect } from "react"
 
-// import { addBook } from "../../actions/index"
-
-import { useDispatch } from "react-redux"
-
 import { getEpisodes, addBook } from "../../apis"
 
 import TextInput from "../common/form/TextInput"
@@ -11,10 +7,11 @@ import SelectSingle from "../common/form/SelectSingle"
 import TwoColFormLayout from "../common/form/TwoColFormLayout"
 import FormFooter from "../common/form/FormFooter"
 import FormContainer from "../common/form/FormContainer"
+import Toast from "../common/Toast"
 
 function AddBookForm(props) {
-  const dispatch = useDispatch()
 
+  const [showToast, setShowToast]= useState(false)
   const [episodes, setEpisodes] = useState([
     { value: "default", label: "Select episode" },
   ])
@@ -34,6 +31,7 @@ function AddBookForm(props) {
     })
   }, [])
 
+
   const handleChange = (e) => {
     e.preventDefault()
 
@@ -46,15 +44,30 @@ function AddBookForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     addBook(formData)
+    handleToast()
     //todo clear form data
   }
+  const handleToast = () =>{
+    setShowToast(true)
+    window.scrollTo(0, 0)
+    setTimeout(()=>{
+      setShowToast(false)
+    },[5000])
+
+  }
+
+  const toastBody = <p>You can it on the <a className="underline" href='/books'>books</a> page</p>
 
   return (
     <>
+    
+    {showToast && <Toast title={'Book added successfully'} text={toastBody}toastActions={{showToast, setShowToast}}/> }
+    
       <TwoColFormLayout
         heading="Add a book"
         subheading="Find all the recommendations from the Shameless team"
       >
+
         {
           <form onSubmit={handleSubmit}>
             <FormContainer>
