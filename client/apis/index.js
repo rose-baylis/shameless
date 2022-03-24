@@ -13,3 +13,12 @@ export function addEpisode(episode) {
     return response.body
   })
 }
+
+export function addBook(book) {
+  return request.post("/api/v1/books")
+  .send(book)
+  .then((response) => {
+    return response.body
+  })
+}
+

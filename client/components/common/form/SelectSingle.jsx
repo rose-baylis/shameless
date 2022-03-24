@@ -25,7 +25,7 @@ function SelectSingle(props) {
               <option
                 value={option.value}
                 key={option.value}
-                disabled={i === 0 ? true : false}
+                disabled={option.disabled === true ? true : false}
               >
                 {option.label}
               </option>

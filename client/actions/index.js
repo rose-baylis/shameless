@@ -49,33 +49,34 @@ export function fetchBooks() {
   }
 }
 
-export function fetchEpisodes() {
-  return (dispatch) => {
-    return request
-      .get(`/api/v1/episodes`)
-      .then((episodes) => {
-        return episodes.body
-      })
-      .catch((err) => {
-        console.error(error)
-      })
-  }
-}
+// export function fetchEpisodes() {
+//   return (dispatch) => {
+//     return request
+//       .get(`/api/v1/episodes`)
+//       .then((episodes) => {
+//         return episodes.body
+//       })
+//       .catch((err) => {
+//         console.error(error)
+//       })
+//   }
+// }
 
 
-export function addBook(newBook) {
-  return (dispatch) => {
-    return request
-      .post(`/api/v1/books`)
-      .send(newBook)
-      .then((bookID) => {
-        return bookID
-      }).then(()=>{
-        dispatch(fetchBooks())
-        return null
-      })
-      .catch((err) => {
-        console.error(error)
-      })
-  }
-}
+// export function addBook(newBook) {
+  
+//   return (dispatch) => {
+//     return request
+//       .post(`/api/v1/books`)
+//       .send(newBook)
+//       .then((bookID) => {
+//         return bookID
+//       }).then(()=>{
+//         dispatch(fetchBooks())
+//         return null
+//       })
+//       .catch((err) => {
+//         console.error(error)
+//       })
+//   }
+// }

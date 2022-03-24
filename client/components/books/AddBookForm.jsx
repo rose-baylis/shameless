@@ -1,8 +1,10 @@
 import React, { Component, useState, useEffect } from "react"
 
-import { addBook, fetchEpisodes } from "../../actions/index"
+// import { addBook } from "../../actions/index"
 
 import { useDispatch } from "react-redux"
+
+import { getEpisodes, addBook } from "../../apis"
 
 import TextInput from "../common/form/TextInput"
 import SelectSingle from "../common/form/SelectSingle"
@@ -13,7 +15,24 @@ import FormContainer from "../common/form/FormContainer"
 function AddBookForm(props) {
   const dispatch = useDispatch()
 
+  const [episodes, setEpisodes] = useState([
+    { value: "default", label: "Select episode" },
+  ])
+
   const [formData, setFormData] = useState({})
+
+  useEffect(() => {
+    getEpisodes().then((returnedEps) => {
+      //Change the format so they can be use as select options
+      const selectOptions = returnedEps.map((episode) => {
+        return {
+          value: episode.id,
+          label: episode.episode_name,
+        }
+      })
+      setEpisodes(selectOptions)
+    })
+  }, [])
 
   const handleChange = (e) => {
     e.preventDefault()
@@ -26,7 +45,7 @@ function AddBookForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(addBook(formData))
+    addBook(formData)
     //todo clear form data
   }
 
@@ -69,7 +88,7 @@ function AddBookForm(props) {
                   htmlFor: "recommended_by",
                   defaultValue: "default",
                   options: [
-                    { value: "default", label: "Select host" },
+                    { value: "default", label: "Select host", disabled: true },
                     { value: "mich", label: "Mich" },
                     { value: "zara", label: "Zara" },
                     { value: "Both", label: "Both" },
@@ -78,10 +97,21 @@ function AddBookForm(props) {
                   isRequired: true,
                 }}
               />
+              {/* Select episode */}
+              <SelectSingle
+                formElement={{
+                  label: "Episode",
+                  name: "episode_id",
+                  htmlFor: "episode_id",
+                  defaultValue: "default",
+                  options: episodes,
+                  onChange: handleChange,
+                  isRequired: true,
+                }}
+              />
             </FormContainer>
             <FormFooter />
           </form>
-          
         }
       </TwoColFormLayout>
     </>

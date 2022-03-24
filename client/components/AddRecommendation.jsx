@@ -20,6 +20,7 @@ function AddRecommendation(props){
   useEffect(() => {
     // Sets the page to highlight in the navigation
     dispatch(setCurrentPage("/new-recommendation"))
+    
   }, [])
 
   useEffect(() => {
