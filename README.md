@@ -10,15 +10,16 @@ Shameless Podcast is one of my favourite weekly podcasts. You can check them out
 
 As part of their weekly episodes they a recommendations for books, movies, tv shows and other podcasts. The weekly recommendations are kept on a [google sheet](https://docs.google.com/spreadsheets/d/1SHDCM3D03X47IpPenKLboTeDaoaPspGS6IrDv0GqChA/edit#gid=334302862) and I thought it would be fun to recreate this as a full stack web app. 
 
-![image](https://user-images.githubusercontent.com/93626609/159834189-18e98b89-faa1-4ec7-b888-ac3dd5e4db5b.png)
-![image](https://user-images.githubusercontent.com/93626609/159834205-e1e2e26f-87c8-49bf-90d1-510da51c045c.png)
-![image](https://user-images.githubusercontent.com/93626609/159834214-c386fd84-3e1f-4442-aff6-8dc2ba93b985.png)
-
 ## Current features
 * A user can add a book recommendation
 * A user can add an episode
 * A user can link a book recommendation to an episode  
 * A user can view all past episodes
+
+![image](https://user-images.githubusercontent.com/93626609/159834189-18e98b89-faa1-4ec7-b888-ac3dd5e4db5b.png)
+![image](https://user-images.githubusercontent.com/93626609/159834205-e1e2e26f-87c8-49bf-90d1-510da51c045c.png)
+![image](https://user-images.githubusercontent.com/93626609/159834214-c386fd84-3e1f-4442-aff6-8dc2ba93b985.png)
+
 
 ## In progress
 * A user can view recommendations by episode 
