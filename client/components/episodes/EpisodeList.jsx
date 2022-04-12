@@ -7,8 +7,7 @@ function EpisodeList(props) {
 
 
   return (
-    <>
-      <div className="px-4 py-4 md:p-6">
+      <div className="py-4 md:pt-6">
         <h3 className="text-lg font-medium leading-6 text-gray-900 mb-3">
           All Episodes
         </h3>
@@ -45,7 +44,6 @@ function EpisodeList(props) {
           </table>
         </div>
       </div>
-    </>
   )
 }
 

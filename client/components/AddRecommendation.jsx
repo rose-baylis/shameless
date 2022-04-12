@@ -41,7 +41,7 @@ function AddRecommendation(props){
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="container mx-auto p-3 ">
+      <div className="container mx-auto p-3 max-w-5xl">
         <div className="py-5">
           <h3 className="text-2xl font-bold mb-1">Add new recommendation </h3>
           <p className="text-gray-400">
@@ -74,8 +74,9 @@ function AddRecommendation(props){
             </li>
           </ul>
         </div>
-      </div>
       <div className="container mx-auto">{tabComponent}</div>
+    
+      </div>
     </div>
   )
 }
