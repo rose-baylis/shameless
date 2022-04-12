@@ -1384,6 +1384,11 @@ select {
   transition-duration: 150ms;
 }
 
+.react-datepicker__day:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .react-datepicker__day--disabled {
   cursor: not-allowed;
   opacity: 0.4;

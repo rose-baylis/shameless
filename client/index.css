@@ -60,7 +60,7 @@
 }
 
 .react-datepicker__day {
-    @apply mb-1 w-8 h-8 flex items-center justify-center py-1 text-sm leading-loose transition text-gray-700 rounded
+    @apply mb-1 w-8 h-8 flex items-center justify-center py-1 text-sm leading-loose transition text-gray-700 rounded hover:bg-slate-100
 }
 
 .react-datepicker__day--disabled {
