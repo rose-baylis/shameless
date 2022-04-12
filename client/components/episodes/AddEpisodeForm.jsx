@@ -102,6 +102,7 @@ function AddEpisodeForm(props) {
             </div> */}
             <div className="relative w-40">
               <DatePicker
+                dateFormat="dd/MM/yyyy"
                 selected={startDate}
                 onChange={handleDate}
                 popperClassName="react-datepicker-left"
@@ -114,18 +115,6 @@ function AddEpisodeForm(props) {
           <FormFooter />
         </form>
       </TwoColFormLayout>
-      {/* <div className="relative w-40">
-                    <DatePicker
-                        selected={startDate}
-                        onChange={handleDate}
-                        // selectsStart
-                        startDate={startDate}
-                        // endDate={endDate}
-                        nextMonthButtonLabel=">"
-                        previousMonthButtonLabel="<"
-                        // popperClassName="react-datepicker-left"
-                    />
-                </div> */}
       <EpisodeList episodes={episodes} />
     </div>
   )
